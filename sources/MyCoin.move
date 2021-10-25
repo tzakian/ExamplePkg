@@ -17,4 +17,8 @@ module A::Coin {
     acquires Coin {
         move_from<Coin<CoinType>>(Signer::address_of(account))
     }
+
+    public fun exists_coin<CoinType>(account: &signer): bool {
+        exists<Coin<CoinType>>(Signer::address_of(account))
+    }
 }
