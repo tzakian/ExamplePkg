@@ -21,4 +21,10 @@ module A::Coin {
     public fun exists_coin<CoinType>(account: &signer): bool {
         exists<Coin<CoinType>>(Signer::address_of(account))
     }
+
+    #[test_only]
+    public fun coin_value<CoinType>(coin: Coin<CoinType>): u64 {
+        let Coin { value } = coin;
+        value
+    }
 }
