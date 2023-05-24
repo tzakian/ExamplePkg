@@ -1,2 +1,3 @@
+// comment
 module A::Coin {
 }
